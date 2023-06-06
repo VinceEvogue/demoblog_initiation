@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %} liste voitures{% endblock %}
+{% block body %}
+
+
+
+<table class="table table-dark table-striped">
+	<thead>
+		<tr>
+            <th>#</th>
+            <th>marque</th>
+            <th>modèle</th>
+            <th>prix</th>
+            <th>description</th>
+            <th>Option</th>
+        </tr>
+	</thead>
+	<tbody>
+{% for voiture in voitures %}
+    
+
+        <tr>
+            <td>{{voiture.id}}</td>
+            <td>{{voiture.marque}}</td>
+            <td>{{voiture.modele}}</td>
+            <td>{{voiture.prix}}</td>
+            <td><p>{{voiture.description}}</p></td>
+            <td>
+                <a href="/voitures/edit/{{voiture.id}}"><button type="submit" class="btn btn-warning mt-2">Modifier</button></a>
+                <a href="/voitures/delete/{{voiture.id}}"><button type="submit" class="btn btn-danger mt-2">Supprimer</button></a>
+
+            </td>
+        </tr>
+{% endfor %}
+    </tbody>
+
+</table>
+
+
+<a  href="{{path('voiture_create')}}"><button class="btn btn-primary">Nouvelle voiture</button></a>
+
+
+
+
+
+
+ {% endblock %}
