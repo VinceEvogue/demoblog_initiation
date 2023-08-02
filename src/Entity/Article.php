@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,12 +15,21 @@ class Article
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message: 'Ce champs ne peut pas être vide')]
+    #[Assert\Length(
+        min:5,
+        max:50,
+        minMessage : "Pas assez de caractères. il faut au moins {{ limit }} caractères",
+        maxMessage :  "Trop de de caractères. il faut au maximum {{ limit }} caractères"
+    )]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank(message: 'Ce champs ne peut pas être vide')]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[Assert\NotBlank(message: 'Ce champs ne peut pas être vide')]
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 

@@ -7,7 +7,7 @@
     {% else %}
         Ajouter
     {% endif %}
-    
+
 {% endblock %}
 
 {% block body %}
@@ -23,7 +23,9 @@
     <div class="container">
     {# {{ form(form) }} #}
     {# ! la fonction form() affiche tout le formulaire d'un seul block nom modifiable #}
-    {{ form_start(formArticle)}}
+    {{ form_start(formArticle, {
+        attr: { novalidate: 'novalidate'}
+    })}}
         
     {# ! en twig un tableau   { indice: valeur }  en PHP [ indice => valeur ] #}
         {{ form_row(formArticle.title , {
