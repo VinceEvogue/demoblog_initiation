@@ -56,8 +56,8 @@ class ArticleFixtures extends Fixture
                     $days = $interval->days;
                     $minimum = '-' . $days . ' days';
 
-                    $comment->setAuthor($this->faker->name)
-                            ->setContent($this->faker->paragraph())
+                    // $comment->setAuthor($this->faker->name); ancienne propriété de Comment avant la liaison avec User 
+                    $comment->setContent($this->faker->paragraph())
                             ->setArticle($article)
                             ->setCreatedAt($this->faker->dateTimeBetween($minimum));
                     $manager->persist($comment);
