@@ -8,11 +8,12 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>titre</th>
-                <th>image</th>
-                <th>contenu</th>
-                <th>date</th>
-                <th>option</th>
+                <th>Categorie</th>
+                <th>Titre</th>
+                <th>Image</th>
+                <th>Contenu</th>
+                <th>Date</th>
+                <th>Option</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                 
                 <tr>
                     <td>{{ article.id }}</td>
+                    <td>{{ article.category.title }}</td>
                     <td>{{ article.title }}</td>
                     <td><img src="{{ article.image }}" alt="" width="50"></td>
                     <td>{{ article.content|slice(0, 100) }}</td>
