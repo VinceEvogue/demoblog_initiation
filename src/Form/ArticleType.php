@@ -37,6 +37,7 @@ class ArticleType extends AbstractType
                             'image/png',
                             'image/jpeg',
                             'image/webp',
+        
                         ],
                         'mimeTypesMessage' => "Le fichier n'a pas le bon format ou la taille est trop élévée",
                     ])

@@ -39,6 +39,7 @@ class AdminController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             //! Début traitement de l'image 
+            //! lien doc upload file : https://symfony.com/doc/current/controller/upload_file.html
             $imageFile = $form->get('image')->getData();
 
             // this condition is needed because the 'brochure' field is not required
